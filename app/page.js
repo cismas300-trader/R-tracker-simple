@@ -20,10 +20,11 @@ export default function Page() {
         textAlign: "center",
         padding: 40,
         minHeight: "100vh",
-        background: "#f8fafc",
+        background: "#020617",
         display: "flex",
         flexDirection: "column",
         justifyContent: "center",
+        color: "white",
       }}
     >
       <div
@@ -31,14 +32,17 @@ export default function Page() {
           fontSize: 64,
           fontWeight: 700,
           marginBottom: 40,
-          color: r >= 0 ? "#16a34a" : "#dc2626",
+          color: r >= 0 ? "#22c55e" : "#ef4444",
+          textShadow:
+            r >= 0
+              ? "0 0 20px rgba(34,197,94,0.35)"
+              : "0 0 20px rgba(239,68,68,0.35)",
         }}
       >
         {r}R
       </div>
 
       <div style={{ display: "flex", flexDirection: "column", gap: 20 }}>
-        
         <button
           onClick={() => setR(r + 1)}
           style={{
@@ -47,8 +51,11 @@ export default function Page() {
             fontWeight: 700,
             borderRadius: 16,
             border: "none",
-            background: "#16a34a",
+            background: "#22c55e",
             color: "white",
+            boxShadow: "0 0 20px rgba(34,197,94,0.35)",
+            cursor: "pointer",
+            transition: "transform 0.08s ease, box-shadow 0.2s ease",
           }}
         >
           WIN
@@ -62,13 +69,15 @@ export default function Page() {
             fontWeight: 700,
             borderRadius: 16,
             border: "none",
-            background: "#dc2626",
+            background: "#ef4444",
             color: "white",
+            boxShadow: "0 0 20px rgba(239,68,68,0.35)",
+            cursor: "pointer",
+            transition: "transform 0.08s ease, box-shadow 0.2s ease",
           }}
         >
           LOSS
         </button>
-
       </div>
     </div>
   );
